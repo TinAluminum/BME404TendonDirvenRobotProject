@@ -1,6 +1,5 @@
 import gymnasium as gym
-
-from stable_baselines3 import DQN
+from stable_baselines3 import PPO
 from stable_baselines3.common.evaluation import evaluate_policy
 
 
@@ -11,7 +10,7 @@ from stable_baselines3.common.evaluation import evaluate_policy
 
 env = gym.make("LunarLander-v2", render_mode="rgb_array")
 
-model = DQN.load("dqn_lunar", env=env)
+model = PPO.load("ppo_lunar", env=env)
 
 # Evaluate the agent
 # NOTE: If you use wrappers with your environment that modify rewards,
